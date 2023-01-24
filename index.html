@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /*General*/
+        html{
+            font-family: 'Montserrat';
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(237, 237, 237);
+        }
+
+        /*Container*/
+        .container {
+            display: flex;
+            flex-direction: column;
+            margin: 1rem;
+        }
+
+        /*header*/
+       .container > .header {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*top*/
+        .header .top {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .header .top .left {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            padding: 0.2rem;
+        }
+
+        .header .top .left h1{
+            font-weight: 500;
+        }
+
+        .header .top .left h2{
+            font-weight: 400;
+            padding-left: 0.5rem;
+            font-size: 1rem;
+            color: rgb(91, 97, 110);
+        }
+
+
+        .header .top .right {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .header .top .right button{
+            font-family: inherit;
+            font-weight: 500;
+            border: none;
+            background-color:#d5dada;
+            margin-left: 0.5rem;
+            margin-right: 0.5em;
+            padding: 0.5rem 2rem;
+            border-radius: 25%/50%;
+            cursor: pointer;
+        }
+
+        /*bottom*/
+        .header .bottom {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .header .bottom button{
+            display: flex;
+            background-color:#e4e4e4;
+            border: none;
+            margin: 0.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+           align-items: center;      
+           font-weight: 700;     
+           white-space: nowrap;
+           padding: 0.2rem 0.4rem;
+        }
+
+        .header .bottom img{
+          background-color: rgb(245, 245, 245);
+          border-radius: 4px;
+          padding: 0.5rem;
+          margin-right: 0.2rem;
+        }
+
+        .header .bottom button:hover{
+            color: rgb(9, 9, 254);
+        }
+
+
+        /*Main*/
+        .main {
+            border: 1px solid blue;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*Header*/
+        .main .header {
+            display: flex;
+            flex-direction: row;
+        }
+
+        /*Content*/
+        .main .content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /*coin*/
+        .coin {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .name{
+
+        }
+
+        .name > span{
+
+        }
+
+        .price{
+
+        }
+
+        .change{
+
+        }
+
+        .market-cap{
+
+        }
+
+        
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="top">
+                <div class="left">
+                    <h1>Crypto prices</h1>
+                    <h2>16,942 assets</h2>
+                </div>
+                <div class="right">
+                    <button>USD</button>
+                    <button>1D</button>
+                </div>
+            </div>
+            <div class="bottom">
+                <button>
+                    <img src="svg/all-assets.svg">
+                    All assets
+                </button>
+                <button>
+                    <img src="svg/tradable.svg">
+                    Tradable
+                </button>
+                <button>
+                    <img src="svg/gainers.svg">
+                    Gainers
+                </button>
+                <button>
+                    <img src="svg/losers.svg">
+                    Losers
+                </button>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="header">
+                <p>Name</p>
+                <p>Price</p>
+                <p>Change</p>
+                <p>Market cap</p>
+                <p>Trade</p>
+            </div>
+            <div class="content">
+                <div class="coin">
+                    <div class="name">Bitcoin <span>BTC</span></div>
+                    <div class="price">$21,291.69</div>
+                    <div class="change">0.06%</div>
+                    <div class="market-cap">$410,096,171,355</div>
+                    <button class="trade">Trade</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

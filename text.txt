@@ -1,0 +1,19 @@
+<div class="info">
+            <div class="ranking">#</div>
+            <div class="name">Name</div>
+            <div class="price">Price</div>
+            <div class="one-hour">1h %</div>
+            <div class="market-cap">Market Cap</div>
+            <div class="volume">Volume(24h)</div>
+            <div class="supply">Supply</div>
+        </div>
+
+        <div class="coin">
+            <div class="ranking">1</div>
+            <div class="name">Bitcoin <span>BTC</span></div>
+            <div class="price">$21,291.69</div>
+            <div class="one-hour">0.06%</div>
+            <div class="market-cap">$410,096,171,355</div>
+            <div class="volume">$24,578,540,337</div>
+            <div class="circulating-supply">19,265,443 BTC</div>
+        </div>
