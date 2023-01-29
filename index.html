@@ -12,7 +12,7 @@
 
     <style>
         /*General*/
-        html{
+        html {
             font-family: 'Montserrat';
         }
 
@@ -33,7 +33,7 @@
         }
 
         /*header*/
-       .container > .header {
+        .container>.header {
             display: flex;
             flex-direction: column;
         }
@@ -52,11 +52,11 @@
             padding: 0.2rem;
         }
 
-        .header .top .left h1{
+        .header .top .left h1 {
             font-weight: 500;
         }
 
-        .header .top .left h2{
+        .header .top .left h2 {
             font-weight: 400;
             padding-left: 0.5rem;
             font-size: 1rem;
@@ -69,11 +69,11 @@
             flex-direction: row;
         }
 
-        .header .top .right button{
+        .header .top .right button {
             font-family: inherit;
             font-weight: 500;
             border: none;
-            background-color:#d5dada;
+            background-color: #d5dada;
             margin-left: 0.5rem;
             margin-right: 0.5em;
             padding: 0.5rem 2rem;
@@ -87,27 +87,27 @@
             flex-direction: row;
         }
 
-        .header .bottom button{
+        .header .bottom button {
             display: flex;
-            background-color:#e4e4e4;
+            background-color: #e4e4e4;
             border: none;
             margin: 0.2rem;
             border-radius: 4px;
             cursor: pointer;
-           align-items: center;      
-           font-weight: 700;     
-           white-space: nowrap;
-           padding: 0.2rem 0.4rem;
+            align-items: center;
+            font-weight: 700;
+            white-space: nowrap;
+            padding: 0.2rem 0.4rem;
         }
 
-        .header .bottom img{
-          background-color: rgb(245, 245, 245);
-          border-radius: 4px;
-          padding: 0.5rem;
-          margin-right: 0.2rem;
+        .header .bottom img {
+            background-color: rgb(245, 245, 245);
+            border-radius: 4px;
+            padding: 0.5rem;
+            margin-right: 0.2rem;
         }
 
-        .header .bottom button:hover{
+        .header .bottom button:hover {
             color: rgb(9, 9, 254);
         }
 
@@ -125,6 +125,10 @@
             flex-direction: row;
         }
 
+        .main .header p {
+            flex: 1;
+        }
+
         /*Content*/
         .main .content {
             display: flex;
@@ -135,30 +139,23 @@
         .coin {
             display: flex;
             flex-direction: row;
+            margin: 1rem 0rem;
         }
 
-        .name{
-
+        .main .content .coin div,
+        .main .content .coin button {
+            flex: 1;
         }
 
-        .name > span{
+        .name {}
 
-        }
+        .name>span {}
 
-        .price{
+        .price {}
 
-        }
+        .change {}
 
-        .change{
-
-        }
-
-        .market-cap{
-
-        }
-
-        
-        
+        .market-cap {}
     </style>
 </head>
 
@@ -205,6 +202,7 @@
             </div>
             <div class="content">
                 <div class="coin">
+                    <!--Insert name, price, change, market-cap (div) and trade (button)-->
                     <div class="name">Bitcoin <span>BTC</span></div>
                     <div class="price">$21,291.69</div>
                     <div class="change">0.06%</div>
@@ -216,6 +214,48 @@
     </div>
 
     <script>
+
+        async function fetchCoins() {
+            const response = await fetch('https://api.coinlore.net/api/tickers/');
+            const data = await response.json();
+            displayCoins(data);
+            console.log(data);
+        }
+
+        function displayCoins(data) {
+            const content = document.querySelector('.content');
+
+            for (i = 0; i < 100; i++) {
+                let coin = document.createElement('div');
+                let name = document.createElement('div');
+                let price = document.createElement('div');
+                let change = document.createElement('div');
+                let marketCap = document.createElement('div');
+                let trade = document.createElement('button');
+                trade.innerText = 'Trade';
+
+                marketCap.className = 'market-cap';
+                change.className = 'change';
+                price.className = 'price';
+                name.className = 'name';
+                coin.className = 'coin';
+                trade.className = 'trade';
+
+                name.innerText = data.data[i].name;
+                price.innerText = data.data[i].price_usd;
+                change.innerText = data.data[i].percent_change_1h;
+                marketCap.innerText = data.data[i].market_cap_usd;
+
+                coin.appendChild(name);
+                coin.appendChild(price);
+                coin.appendChild(change);
+                coin.appendChild(marketCap);
+                coin.appendChild(trade);
+                content.appendChild(coin);
+            }
+        }
+
+        fetchCoins();
 
     </script>
 </body>
